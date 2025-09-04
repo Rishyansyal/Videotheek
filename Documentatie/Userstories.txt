@@ -1,0 +1,68 @@
+Klant:
+ES01E2:
+als klant wil ik zien hoeveel films ik aan het huren ben zodat ik een makkelijk overzicht heb erover
+ 
+acceptatie criteria
+de klant kan alle films zien die ze hebben gehuurd, op welke datum
+
+ES02E2:
+als klant wil ik zien hoeveel geld ik per periode uitgeef zodat ik zo mijn kosten kan beheren
+ 
+acceptatie criteria
+de klant heeft een duidelijk overzicht van welke films hij/zij huurt 
+de klant kan zien hoeveel de huur van de films bedraagt per periode
+de klant kan zien wanneer de volgende afschrijving is
+
+ES03E2:
+als klant wil ik een zoekfunctie en aanbevelingen zodat ik makkelijker mijn keuzes kan maken
+ 
+acceptatie criteria
+de klant ziet genoeg opties als ze een film zoeken
+de klant ziet nog extra aanbevelingen die verbonden zijn aan de film (2e deel 
+
+ES04E2:
+als klant wil ik handige betaalmethodes die vaak gebruikt worden zoals Ideal, Creditcard, Paypal zodat ik altijd kan betalen.
+ 
+acceptatie criteria
+de klant kan betalen met meerdere betaalmethodes
+het geld komt op de rekening van de eigenaar/verhuurder
+ 
+
+
+
+
+Staff:
+
+
+
+
+
+Admin:
+ES01E3:
+Als Admin wil ik een film kunnen toevoegen zodat ik mijn  invertory kan vergroten.
+Acceptatiecreteria:
+Als admin moet je een film kunnen toevoegen met alle details. Deze moeten in de database komen
+
+ES02E3:
+als eigenaar wil ik gemakkelijk werknemers kunnen toevoegen en verwijderen om zo nieuwe verhuurders aantenemen/ontslaan
+ 
+acceptatie criteria
+de eigenaar kan een lijst zien met werknemers
+de eigenaar kan nieuwe werknemers toevoegen en verwijderen
+de eigenaar kan werknemers aanpassen
+
+ES03E3
+Als eigenaar wil ik kunnen zien welke boeken in welke winkel ligt, zodat ik de klant altijd kan laten voorzien van een boek
+ 
+De eigenaar kan zoeken in welke winkel het boek ligt en kan het boek reseveren
+ 
+ES04E3
+als eigenaar wil ik kunnen zien welke medewerker de meeste boeken verhuurd zodat ik deze kan belonen en de minder productieve kan ontslaan
+ 
+De eigenaar kan zien hoeveel boeken de medewerker verhuurd heeft
+
+ES05E3
+Als eigenaar wil ik de omzet zien per boek, zodat ik kunnen kijken welke boeken het beste presteren en de minder goed presteren
+ 
+De eigenaar kan zien wat de omzet is per boek
+ 
