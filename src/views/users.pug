@@ -3,4 +3,4 @@ extends layout
 block content
     ul 
         each user in users
-          li= user.firstName 
+          li= user.id + user.firstName + user.yob + user.lastName

@@ -7,7 +7,7 @@ get:(userId,callback)=>{
     }
     else{
         let user = data.filter(user=> user.id == userId)[0] 
-        return callback(undefined,user)
+        return callback(undefined,[user])
     }
 },
 };
