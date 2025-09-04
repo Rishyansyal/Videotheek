@@ -7,8 +7,6 @@ router.get('/', usersController.get)
 router.get('/:userId', usersController.get)
 
   
-//   (function(req, res, next) {
-//   res.send('respond widaaath a resource');
-// });
+
 
 module.exports = router;

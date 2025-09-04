@@ -6,8 +6,10 @@ get:(userId,callback)=>{
         return callback(undefined,data)
     }
     else{
-        let user = data.filter(user=> user.id == userId)[0]
+        let user = data.filter(user=> user.id == userId)[0] 
         return callback(undefined,user)
     }
-}
-}
+},
+};
+
+module.exports = usersDao;

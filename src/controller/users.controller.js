@@ -4,7 +4,9 @@ const usersController={
         let userId = req.params.userId;
     userService.get(userId,(error,users)=>{
         if(error) next (error);
-    if (users)  res.render('index', { title: 'Express' });
+    if (users) { 
+        res.render('users', {users:users});
+    }
     })
     },
     

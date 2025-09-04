@@ -32,8 +32,15 @@ het geld komt op de rekening van de eigenaar/verhuurder
 
 
 Staff:
+ES01E1
+Als staff wil ik boeken kunnen bewerken zodat ik de boeken actueel kan maken
+Acceptatiecreteria:
+De user moet alle velden van de boeken veranderen.
 
-
+ES01E1
+Als staff wil ik zien welke boeken de klanten hebben zodat ik kan monitoren welke klanten laat inleveren.
+Acceptatiecreteria
+De staff moet een naam zien waar 1 van de boeken zijn.
 
 
 
