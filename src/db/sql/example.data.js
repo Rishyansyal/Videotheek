@@ -8,21 +8,21 @@ const data =[
     {
         id:2,
         firstName:"ja",
-        lastName:"lo",
-        yob:2002
-    },
-    {
-        id:3,
-        firstName:"wo",
-        lastName:"a",
-        yob:2012
-    },
-    {
-        id:4,
-        firstName:"wef",
-        lastName:"qw",
-        yob:2023
-    },
-]
+                        lastName:"lo",
+                        yob:2002
+                    },
+                    {
+                        id:3,
+                        firstName:"wo",
+                        lastName:"a",
+                        yob:2012
+                    },
+                    {
+                        id:4,
+                        firstName:"wef",
+                        lastName:"qw",
+                        yob:2023
+                    },
+                ]
 
-module.exports = data;
+                module.exports = data;

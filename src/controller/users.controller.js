@@ -9,7 +9,37 @@ const usersController={
     }
     })
     },
-    
 
+    delete:(req,res,next)=>{
+        let userId = req.parms.userId
+        userService.delete(userId,(error,result)=>{
+            if(error) next (error);
+            if (result){
+                res.render("users",{users:users})
+            }
+        })
+    },
+    
+    post:(req,res,next)=>{
+        let user = req.body;
+    userService.post(user,(error,result)=>{
+        if(error) next (error);
+    if (result) { 
+            res.render('users', {users: users});
+        }
+    });
+    },
+    put:(req,res,next)=>{
+        let userId = req.params.userId;
+        let user = req.body;
+    userService.put(userId,user,(error,result)=>{
+        if(error) next (error);
+    if (result) { 
+            res.render('users', {users: users});
+        }
+    });
+    },
 };
+
+
 module.exports = usersController
