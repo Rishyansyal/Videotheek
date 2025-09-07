@@ -12,7 +12,13 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "winston": "^3.17.0",
+    "mysql2": "^3.14.4",
+    "jade": "~1.11.0",
+    "jquery": "^3.7.1",
+    "ejs": "^3.1.10"
+
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
