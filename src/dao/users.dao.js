@@ -1,4 +1,4 @@
-const data = require("../db/sql/connection")
+const database = require("../db/sql/connection")
 const usersDao = {
     get: (userId, callback) => {
        database.query(
