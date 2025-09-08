@@ -5,7 +5,11 @@ const usersController={
     userService.get(userId,(error,users)=>{
         if(error) next (error);
         if (users) { 
-        res.render('users/table', {users:users});
+            userId == undefined
+            ? res.render('users/table', {users:users})
+            : res.render('users/details', {users:users});
+
+
     }
     })
     },
@@ -39,6 +43,7 @@ const usersController={
         }
     });
     },
+    
 };
 
 
