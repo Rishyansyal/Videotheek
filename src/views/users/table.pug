@@ -1,0 +1,17 @@
+extends ../layout
+
+block content 
+    table(class="table")
+      thead
+        tr
+          th(scope="col") Firstname
+          th(scope="col") lastname
+
+      tbody
+        each user in users
+            tr
+                th #{user.first_name}
+                td #{user.last_name}
+                
+
+    

@@ -7,20 +7,21 @@
     "dev": "nodemon ./bin/wwww"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "ejs": "^3.1.10",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
-    "winston": "^3.17.0",
-    "mysql2": "^3.14.4",
     "jade": "~1.11.0",
     "jquery": "^3.7.1",
-    "ejs": "^3.1.10"
-
+    "morgan": "~1.9.1",
+    "mysql2": "^3.14.4",
+    "pug": "2.0.0-beta11",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^3.4.2",
     "nodemon": "^3.1.10",
     "prettier": "^3.6.2"
   }
