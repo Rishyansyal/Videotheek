@@ -4,8 +4,8 @@ const usersController={
         let userId = req.params.userId;
     userService.get(userId,(error,users)=>{
         if(error) next (error);
-    if (users) { 
-        res.render('users', {users:users});
+        if (users) { 
+        res.render('users/users', {users:users});
     }
     })
     },
@@ -15,7 +15,7 @@ const usersController={
         userService.delete(userId,(error,result)=>{
             if(error) next (error);
             if (result){
-                res.render("users",{users:users})
+                res.render("users/users",{users:users})
             }
         })
     },
@@ -25,7 +25,7 @@ const usersController={
     userService.post(user,(error,result)=>{
         if(error) next (error);
     if (result) { 
-            res.render('users', {users: users});
+            res.render('users/users', {users: users});
         }
     });
     },
@@ -35,7 +35,7 @@ const usersController={
     userService.put(userId,user,(error,result)=>{
         if(error) next (error);
     if (result) { 
-            res.render('users', {users: users});
+            res.render('users/users', {users: users});
         }
     });
     },
