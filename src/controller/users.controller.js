@@ -18,7 +18,7 @@ const usersController={
         ? userService.get(userId,(error, users)=>{
             if(error) next (error);
             if (users) {
-                res.render("users/edit",{users:users[0]});
+                res.render("users/edit",{user:users[0]});
             
         }
     })
