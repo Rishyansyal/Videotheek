@@ -1,3 +1,5 @@
+import { logger } from "../util/logger";
+
 const userService = require("../service/user.service")
 const usersController={
     get:(req,res,next)=>{
@@ -5,9 +7,10 @@ const usersController={
     userService.get(userId,(error,users)=>{
         if(error) next (error);
         if (users) { 
+            logger.debug(user)
             userId == undefined
             ? res.render('users/table', {users:users})
-            : res.render('users/details', {users:users});
+            : res.render('users/details', {users:users[0]}); // krijgt id van die localhost:xxxx/user <-- id wordt ervan meegegeven
 
 
     }
