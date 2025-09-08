@@ -6,7 +6,7 @@ usersDao.get(userId,(error,users)=>{
     if(error) return callback(error,undefined);
     if(users) {
         if(userId==undefined) return callback(undefined,users);
-        let user = users.filter((user)=>user.id == userId)[0];
+        let user = users.filter((user)=>user.customer_id == userId)[0];
         console.log(user)
         return callback(undefined,[user])};
 });
