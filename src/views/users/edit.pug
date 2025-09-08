@@ -1,8 +1,9 @@
-extend ../layout        
+extends ../layout        
 
-block content 
-    form(method= "post" action="/users/"+ user.customer_id +"/edit")
-  div(class="mb-3")
-    label(for="exampleInputEmail1" class="form-label") Email address
-    input(type="email" class="form-control" value= user.email id="exampleInputEmail1" aria-describedby="emailHelp")
-  button(type="submit" class="btn btn-primary") Submit
+block content
+  form(method="post", action=`/users/${user.id}/edit`)
+    .mb-3
+      label(for="exampleInputEmail1", class="form-label") Email address
+      input(type="email", class="form-control", id="exampleInputEmail1", aria-describedby="emailHelp", name="email", value=user.email)
+    button(type="submit", class="btn btn-primary") Submit
+    a(class="btn btn-secondary", href=`/users/${user.id}/details`) Back to user details

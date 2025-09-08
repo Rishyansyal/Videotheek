@@ -14,15 +14,16 @@ const usersController={
     },
     update:(req,res,next)=>{
         let userId = req.params.userId;
-        req.methode =="GET"
-        ? userService.get(userId,(error, users)=>{
+        req.method ==="GET"
+         userService.get(userId,(error, users)=>{
             if(error) next (error);
             if (users) {
-                res.render("users/edit",{user:users[0]});
+            userId == undefined
+            ? res.render("users/table",{users:users})
+            : res.render("users/edit",{user:users[0]}); // krijgt id van die localhost:xxxx/user <-- id wordt ervan meegegeven
             
         }
     })
-    : console.log(req.body.email);
     },
 
     delete:(req,res,next)=>{
