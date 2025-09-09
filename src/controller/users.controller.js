@@ -1,5 +1,7 @@
+const { Callbacks, error } = require("jquery");
 const userService = require("../service/user.service")
 const logger = require('../util/logger');
+const usersDao = require("../dao/users.dao");
 const usersController={
      get:(req,res,next)=>{
         let userId = req.params.userId;
@@ -14,8 +16,9 @@ const usersController={
     },
     update:(req,res,next)=>{
         let userId = req.params.userId;
+        let email = req.body.email;
         req.method ==="GET"
-         userService.get(userId,(error, users)=>{
+         ?userService.get(userId,(error, users)=>{
             if(error) next (error);
             if (users) {
             userId == undefined
@@ -24,10 +27,12 @@ const usersController={
             
         }
     })
-    },
+    : userService.update(email,userId,(error,result)=>{
+        
+    });},
 
     delete:(req,res,next)=>{
-        let userId = req.parms.userId
+        let userId = req.params.userId
         userService.delete(userId,(error,result)=>{
             if(error) next (error);
             if (result){
