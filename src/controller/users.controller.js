@@ -17,17 +17,20 @@ const usersController={
     update:(req,res,next)=>{
         let userId = req.params.userId;
         let email = req.body.email;
-        req.method ==="GET"
-         ?userService.get(userId,(error, users)=>{
-            if(error) next (error);
-            if (users) {
-            userId == undefined
-            ? res.render("users/table",{users:users})
-            : res.render("users/edit",{user:users[0]}); // krijgt id van die localhost:xxxx/user <-- id wordt ervan meegegeven
-            
-        }
-    })
-    : userService.update(email,userId,(error,result)=>{
+        let first_name = req.body.first_name;
+        let last_name = req.    body.last_name;
+        req.method === "GET"
+          ? userService.get(userId, (error, users) => {
+              if (error) next(error);
+              if (users) {
+                userId == undefined
+                  ? res.render("users/table", { users: users })
+                  : res.render("users/edit", { user: users[0] }); // krijgt id van die localhost:xxxx/user <-- id wordt ervan meegegeven
+              }
+            })
+          : userService.update(email, userId, first_name, last_name, (error, result) => {
+              if (error) next(error);
+        if (result) return res.redirect(301,`/users/${userId}/details`);
         
     });},
 
