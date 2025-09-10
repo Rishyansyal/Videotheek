@@ -1,5 +1,33 @@
 extends layout
 
 block content
-  h1= title
-  p Welcomssse to #{title}
+  .container.mt-4
+    .row.mb-4
+      .col
+        h1.display-6.mb-1 Videotheek
+        p.text-muted Beheer gebruikers en log in voor beveiligde pagina’s.
+
+    .row.g-4
+      .col-12.col-md-6.col-lg-4
+        .card.h-100.shadow-sm
+          .card-body
+            h5.card-title Films
+            p.card-text Bekijk alle films in de videotheek.
+          .card-footer.bg-transparent.border-0
+            a.btn.btn-outline-success(href="/films") Naar films
+
+      .col-12.col-md-6.col-lg-4
+        .card.h-100.shadow-sm
+          .card-body
+            h5.card-title Inloggen
+            p.card-text Log in om beveiligde pagina’s te bekijken en acties uit te voeren.
+          .card-footer.bg-transparent.border-0
+            a.btn.btn-outline-primary(href="/auth/login") Naar inloggen
+
+      .col-12.col-md-6.col-lg-4
+        .card.h-100.shadow-sm
+          .card-body
+            h5.card-title Over ons
+            p.card-text Bekijk informatie over ons
+          .card-footer.bg-transparent.border-0
+            a.btn.btn-outline-secondary(href="/") Over ons
