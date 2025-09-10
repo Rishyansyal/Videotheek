@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-
+const authenticateToken = require("../middleware/auth.middelware");
 const usersController = require("../controller/users.controller")
+router.use(authenticateToken);
 /* GET users listing. */
 router.get('/', usersController.get)
 router.get("/:userId/details",usersController.get)
