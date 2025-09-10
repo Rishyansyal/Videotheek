@@ -10,9 +10,9 @@ const connection = mysql.createConnection({
 });
 
 // Bestaande gebruiker
-const plainPassword = 'Welkom123!';
+const plainPassword = 'WelkomStaff123!';
 
-connection.query('SELECT email FROM customer', async (err, results) => {
+connection.query('SELECT email FROM staff', async (err, results) => {
   if (err) throw err;
   for (const row of results) {
     const hash = await bcrypt.hash(plainPassword, 10);

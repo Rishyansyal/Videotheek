@@ -2,9 +2,19 @@ const db = require("../db/sql/connection");
 
 const userDao = {
   findByUsername: (username, callback) => {
-    db.query("SELECT * FROM customer WHERE email = ?", [username], (err, results) => {
+    const sql = `
+      SELECT staff_id AS id, email, password, 'staff' AS role
+      FROM staff
+      WHERE email = ? OR username = ?
+      UNION ALL
+      SELECT customer_id AS id, email, password, 'customer' AS role
+      FROM customer
+      WHERE email = ?
+      LIMIT 1
+    `;
+    db.query(sql, [username, username, username], (err, results) => {
       if (err) return callback(err);
-      callback(null, results[0]); // één user of undefined
+      return callback(null, results[0] || null);
     });
   }
 };
