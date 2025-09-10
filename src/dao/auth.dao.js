@@ -5,7 +5,7 @@ const userDao = {
     const sql = `
       SELECT staff_id AS id, email, password, 'staff' AS role
       FROM staff
-      WHERE email = ? OR username = ?
+      WHERE email = ?
       UNION ALL
       SELECT customer_id AS id, email, password, 'customer' AS role
       FROM customer

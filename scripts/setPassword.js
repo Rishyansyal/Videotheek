@@ -1,7 +1,6 @@
 const mysql = require('mysql2');
 const bcrypt = require('bcryptjs');
 
-// Pas deze gegevens aan naar jouw databaseconfiguratie
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -9,25 +8,30 @@ const connection = mysql.createConnection({
   database: 'sakila'
 });
 
-// Bestaande gebruiker
+// Kies een standaard wachtwoord
 const plainPassword = 'WelkomStaff123!';
 
 connection.query('SELECT email FROM staff', async (err, results) => {
   if (err) throw err;
+
+  // 1 hash hergebruiken is sneller (zelfde wachtwoord voor iedereen)
+  const hash = await bcrypt.hash(plainPassword, 10);
+
+  let updated = 0;
   for (const row of results) {
-    const hash = await bcrypt.hash(plainPassword, 10);
     await new Promise((resolve, reject) => {
       connection.query(
-        'UPDATE customer SET password = ? WHERE email = ?',
+        'UPDATE staff SET password = ? WHERE email = ?',
         [hash, row.email],
-        (err, result) => {
-          if (err) return reject(err);
-          console.log(`Wachtwoord ingesteld voor: ${row.email}`);
+        (err2, result) => {
+          if (err2) return reject(err2);
+          updated += result.affectedRows;
           resolve();
         }
       );
     });
   }
-  console.log('Alle wachtwoorden ingesteld!');
+
+  console.log(`Staff-wachtwoorden gezet. Aangepaste rijen: ${updated}`);
   connection.end();
 });
