@@ -2,6 +2,9 @@ const jwt = require("jsonwebtoken");
 const authService = require("../service/auth.service");
 
 const authController = {
+  renderLogin: (req, res) => {
+  res.render('auth/login');
+},
   login: (req, res) => {
     const { username, password } = req.body;
     authService.authenticate(username, password, (err, user) => {
