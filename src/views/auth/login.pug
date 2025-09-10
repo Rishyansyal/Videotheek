@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container.mt-5
+    .row.justify-content-center
+      .col-md-4
+        h2.text-center.mb-4 Inloggen
+        if error
+          .alert.alert-danger #{error}
+        form(method="POST", action="/auth/login")
+          .mb-3
+            label.form-label(for="username") E-mailadres of gebruikersnaam
+            input.form-control(type="text", name="username", id="username", required)
+          .mb-3
+            label.form-label(for="password") Wachtwoord
+            input.form-control(type="password", name="password", id="password", required)
+          button.btn.btn-primary.w-100(type="submit") Inloggen

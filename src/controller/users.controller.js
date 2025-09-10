@@ -40,7 +40,6 @@ const usersController = {
     userService.delete(userId, (error, result) => {
       if (error) return next(error);
       if (result) {
-        // hier was 'users' niet gedefinieerd, dus je moet opnieuw alle users ophalen
         userService.get(undefined, (error, users) => {
           if (error) return next(error);
           return res.render("users/users", { users: users });

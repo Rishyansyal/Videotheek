@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a3faacd9-fe67-448a-b245-f27e398d3d54/resourceGroups/appsvc_linux_eastus/providers/Microsoft.Web/sites/Videotheek",
+    "appService.deploySubpath": "."
+}
