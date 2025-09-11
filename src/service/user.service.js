@@ -1,5 +1,5 @@
 const { update } = require("../controller/users.controller");
-const usersDao = require("../dao/users.dao");
+const usersDao = require("../dao/users.dao")
 
 const userService={
     get:(userId,callback)=>{
@@ -22,7 +22,7 @@ usersDao.get(userId,(error,users)=>{
 
     
     delete:(userId,callback)=>{
-        usersDao.get.get(userId,(error,users)=>[]);
+        usersDao.delete(userId,(error,users)=>[]);
                let user = users.filter((user)=>user.customer_id == userId[0]);
             return callback(undefined,[user]);
     }

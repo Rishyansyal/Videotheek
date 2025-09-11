@@ -12,6 +12,6 @@ block content
         
     div.card-body
       a(href="/users/"+ user.customer_id +"/edit" class="btn btn-primary") Edit User
-      a(href="#" class="btn btn-primary") Delete User
+      a.btn.btn-danger(onclick=`deleteButtonClicked('${user.customer_id}', this)`) delete
   else
     p User niet gevonden.

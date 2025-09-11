@@ -1,33 +1,74 @@
 extends layout
 
 block content
-  .container.mt-4
-    .row.mb-4
-      .col
-        h1.display-6.mb-1 Videotheek
-        p.text-muted Beheer gebruikers en log in voor beveiligde pagina’s.
+  
+  .container.mt-5
+    .row.align-items-center.gy-4
+      .col-lg-6
+        h1.display-5.fw-bold.mb-3 Welkom bij MoviePortal
+        p.lead.mb-4 Ontdek en beheer eenvoudig alle films in de database.
+        a.btn.btn-primary.btn-lg(href='/movies') Bekijk alle films
+        a.btn.btn-outline-secondary.btn-lg.ms-2(href='/users') Gebruikers
+      .col-lg-6
+        .ratio.ratio-16x9.rounded.shadow-sm.bg-dark.d-flex.align-items-center.justify-content-center.text-white
+          span.fs-4 Placeholder Trailer / Banner
 
+  
+  .container.mt-5
+    h2.h4.text-uppercase.text-muted.mb-4 Functionaliteiten
     .row.g-4
-      .col-12.col-md-6.col-lg-4
+      .col-md-4
         .card.h-100.shadow-sm
           .card-body
-            h5.card-title Films
-            p.card-text Bekijk alle films in de videotheek.
-          .card-footer.bg-transparent.border-0
-            a.btn.btn-outline-success(href="/films") Naar films
+            .d-flex.align-items-center.mb-3
+              span.badge.bg-primary.me-2 1
+              h5.mb-0 Films
+            p.mb-0 Bekijk alle beschikbare films met details.
+      .col-md-4
+        .card.h-100.shadow-sm
+          .card-body
+            .d-flex.align-items-center.mb-3
+              span.badge.bg-success.me-2 2
+              h5.mb-0 Gebruikers
+            p.mb-0 Beheer klanten / gebruikers records.
+      .col-md-4
+        .card.h-100.shadow-sm
+          .card-body
+            .d-flex.align-items-center.mb-3
+              span.badge.bg-warning.text-dark.me-2 3
+              h5.mb-0 Zoek & Filter
+            p.mb-0 Voeg later eenvoudig filters toe voor een betere ervaring.
 
-      .col-12.col-md-6.col-lg-4
-        .card.h-100.shadow-sm
-          .card-body
-            h5.card-title Inloggen
-            p.card-text Log in om beveiligde pagina’s te bekijken en acties uit te voeren.
-          .card-footer.bg-transparent.border-0
-            a.btn.btn-outline-primary(href="/auth/login") Naar inloggen
+  
+  .container.mt-5
+    h2.h5.mb-3 Snel naar
+    .row.g-3
+      .col-6.col-md-3
+        a.btn.w-100.btn-outline-primary(href='/movies') Alle Films
+      .col-6.col-md-3
+        a.btn.w-100.btn-outline-success(href='/users') Gebruikers
+      .col-6.col-md-3
+        a.btn.w-100.btn-outline-warning(href='/movies/new') Nieuwe Film
+      .col-6.col-md-3
+        a.btn.w-100.btn-outline-secondary(href='/about') Over
 
-      .col-12.col-md-6.col-lg-4
-        .card.h-100.shadow-sm
-          .card-body
-            h5.card-title Over ons
-            p.card-text Bekijk informatie over ons
-          .card-footer.bg-transparent.border-0
-            a.btn.btn-outline-secondary(href="/") Over ons
+  
+  if movies && movies.length
+    .container.mt-5
+      .d-flex.align-items-center.mb-3
+        h2.mb-0 Laatste films
+        a.ms-auto.text-decoration-none(href='/movies') Meer »
+      .row.g-4
+        each movie, i in movies.slice(0,6)
+          .col-sm-6.col-md-4.col-lg-3
+            .card.h-100.shadow-sm
+              if movie.poster
+                img.card-img-top(src=movie.poster, alt=movie.title)
+              .card-body.d-flex.flex-column
+                h6.card-title.text-truncate= movie.title || 'Untitled'
+                if movie.description
+                  p.card-text.small.text-muted(style='max-height:4.5rem; overflow:hidden')= movie.description
+                a.mt-auto.btn.btn-sm.btn-outline-primary(href=`/movies/${movie._id || movie.id}`) Details
+  else
+    .container.mt-5
+      .alert.alert-info.mb-0 Geen films beschikbaar om te tonen.
