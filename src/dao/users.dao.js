@@ -27,7 +27,7 @@ const usersDao = {
 
   update: (email, userId, first_name, last_name, callback) => {
     database.query(
-      "UPDATE ?? SET ?? = ?, ?? = ?, ?? = ? WHERE ?? = ?",
+      "UPDATE ?? SET ?? = ?, ?? = ?, ?? = ? WHERE ?? = ?", //payment en customer verwijderen
       ["customer", "email", email, "first_name", first_name, "last_name", last_name, "customer_id", userId],
       (error, results) => {
         if (error) return callback(error, undefined);
