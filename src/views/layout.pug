@@ -6,6 +6,7 @@ html(lang='nl')
     title Videotheek
     // Bootstrap CSS
     link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' integrity='sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB' crossorigin='anonymous')
+    
     link(rel='icon', type='image/png', href='/favicon.png')
     // Extra head injectie
     block head
@@ -43,7 +44,7 @@ html(lang='nl')
       // Page content
       block content
 
-    // Footer
+    
     footer.mt-5.bg-light.border-top.py-4
       .container.text-center
         .mb-2
@@ -52,8 +53,9 @@ html(lang='nl')
           a.small.mx-2.text-decoration-none.text-muted(href='/contact') Contact
         small.text-muted &copy; #{new Date().getFullYear()} Videotheek.
 
-    // Bootstrap JS
+    
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js' integrity='sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI' crossorigin='anonymous')
-    // Extra scripts
+    script(src='/javascripts/delete.user.js')
+
     block scripts
 
