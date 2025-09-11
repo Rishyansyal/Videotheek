@@ -1,5 +1,5 @@
 const { update } = require("../controller/users.controller");
-const usersDao = require("../dao/users.dao");
+const usersDao = require("../dao/users.dao")
 
 const userService={
     get:(userId,callback)=>{

@@ -8,7 +8,7 @@ router.get('/', authorizeRole(['staff']), usersController.get);
 router.get("/:userId/details", authorizeRole(['staff']), usersController.get);
 router.get("/:userId/edit", authorizeRole(['staff']), usersController.update);
 router.post("/:userId/edit", authorizeRole(['staff']), usersController.update);
-router.delete('/:userId', authorizeRole(['staff']), usersController.delete);
+router.delete('/:userId/delete',usersController.delete)
 
 
 

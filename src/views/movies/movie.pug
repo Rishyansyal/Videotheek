@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  .container.mt-5
+    h1.mb-4.text-center Movies
+    .row
+      each movie in film
+        .col-md-4.mb-4
+          .card.h-100.shadow-sm
+            .card-body.d-flex.flex-column
+              h5.card-title= movie.title || 'No Title'
+    
