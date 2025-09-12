@@ -1,0 +1,181 @@
+extends layout
+
+block content
+    .container.py-5
+      .row.mb-4
+        .col
+          h1.display-5.mb-2 Privacy Policy
+          p.text-muted.mb-1 Last Updated: #[span.fw-semibold 2024-09-01]
+          span.badge.bg-primary User Data & Security
+      .row
+        .col-lg-9
+          .alert.alert-info.small.mb-4
+            strong Note: 
+            |  This summary is provided for transparency. It is not legal advice.
+          .card.mb-4.shadow-sm
+            .card-body
+              h2.h5.mb-3 Overview
+              p We are committed to protecting your personal data. This Privacy Policy explains what we collect, why we collect it, how we store and secure it, and the rights you have.
+              p.mb-0 If you have questions, contact us at #[code privacy@example.com].
+
+          .card.mb-4
+            .card-body
+              h2.h6.text-uppercase.fw-bold.mb-3 Data Categories (Summary)
+              .table-responsive
+                table.table.table-sm.table-striped.align-middle
+                  thead
+                    tr
+                      th(scope="col") Category
+                      th(scope="col") Examples
+                      th(scope="col") Purpose
+                      th(scope="col") Retention
+                  tbody
+                    tr
+                      td Account
+                      td Username, email
+                      td Authentication, communication
+                      td While account is active
+                    tr
+                      td Security
+                      td Login timestamps, hashed password
+                      td Protect service, detect abuse
+                      td Rolling logs (min needed)
+                    tr
+                      td Usage
+                      td Page views, feature use
+                      td Improve functionality
+                      td Aggregated after analysis
+                    tr
+                      td Optional
+                      td Profile preferences
+                      td Personalization
+                      td Until removed by user
+
+          h2.h5.mt-5.mb-3 Details
+          #policy-accordion.accordion.mb-5
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c1") 1. Data We Collect
+              #c1.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p We collect only the minimum data required to operate and improve the service.
+                  ul.mb-2
+                    li Account data (email, username)
+                    li Authentication artifacts (secure password hash, tokens)
+                    li Basic technical metadata (IP (short-lived), user agent, timestamps)
+                    li Usage metrics (aggregated and anonymized where possible)
+                  p No sensitive categories (e.g., health, biometric) are intentionally collected.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c2") 2. Legal Basis / Purpose
+              #c2.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p Purposes include:
+                  ul
+                    li Provide core functionality (login, account management)
+                    li Maintain security and prevent fraud
+                    li Improve performance and user experience
+                    li Comply with applicable legal obligations
+                  p Where required, we rely on consent or legitimate interest (balanced and documented).
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c3") 3. Storage & Security
+              #c3.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p All user data is stored in a secured database with:
+                  ul
+                    li Access control (least privilege)
+                    li Encrypted transport (HTTPS / TLS)
+                    li Secure password hashing (industry-standard algorithm; never stored in plain text)
+                    li Regular dependency updates and vulnerability monitoring
+                  p Backups are encrypted and retained only for disaster recovery within limited rotation windows.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c4") 4. Data Minimization & Retention
+              #c4.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p We retain personal data only as long as necessary for the purposes outlined. Inactive or deleted accounts trigger scheduled cleanup tasks.
+                  p Aggregated analytics are kept without direct identifiers.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c5") 5. Sharing & Disclosure
+              #c5.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p We do not sell personal data.
+                  p Limited sharing may occur with:
+                  ul
+                    li Infrastructure or email service providers (only essential data)
+                    li Security / monitoring services (pseudonymized where feasible)
+                  p Legal disclosure occurs only when required by law with appropriate review.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c6") 6. Cookies & Tracking
+              #c6.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p We use strictly necessary cookies for session management. Optional analytics or preference cookies (if enabled) are disclosed via a banner or settings panel.
+                  p You can disable non-essential cookies in your browser or any provided preference center.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c7") 7. Your Rights
+              #c7.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p Subject to jurisdiction, you may have rights to:
+                  ul
+                    li Access a copy of your personal data
+                    li Request correction or deletion
+                    li Restrict or object to certain processing
+                    li Data portability (structured, common format)
+                  p Contact us to exercise rights. Identity verification may be required.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c8") 8. International Transfers
+              #c8.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p Where data leaves your region, safeguards (e.g., standard contractual clauses) are applied.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c9") 9. Changes to This Policy
+              #c9.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p We may update this policy. Material changes will be highlighted or communicated through in-app notice.
+                  p Continued use after an update indicates acceptance.
+
+            .accordion-item
+              h2.accordion-header
+                button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#c10") 10. Contact
+              #c10.accordion-collapse.collapse(data-bs-parent="#policy-accordion")
+                .accordion-body
+                  p For privacy inquiries or rights requests:
+                  ul
+                    li Email: #[code privacy@example.com]
+                    li Subject: "Privacy Request"
+                  p We aim to respond within 30 days.
+
+          .mb-4
+            small.text-muted This document is provided for transparency and does not create contractual obligations beyond applicable law.
+
+        .col-lg-3
+          .position-sticky(style="top:2rem")
+            .card.mb-3
+              .card-header.fw-semibold Quick Nav
+              .list-group.list-group-flush.small
+                a.list-group-item(href="#c1") Data We Collect
+                a.list-group-item(href="#c3") Storage & Security
+                a.list-group-item(href="#c4") Retention
+                a.list-group-item(href="#c5") Sharing
+                a.list-group-item(href="#c7") Your Rights
+                a.list-group-item(href="#c10") Contact
+            .card
+              .card-body
+                h6.mb-2 Need Help?
+                p.mb-2 If you see inaccurate info, contact support.
+                a.btn.btn-outline-primary.btn-sm(href="/support") Go to Support
+

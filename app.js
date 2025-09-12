@@ -9,6 +9,7 @@ var indexRouter = require('./src/routes/index.route');
 var usersRouter = require('./src/routes/users.route');
 var authRouter = require('./src/routes/auth.route');
 var moviesRouter = require('./src/routes/movies.route');
+var avg = require("./src/routes/avg.route");
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use("/movies", moviesRouter);
+app.use("/avg", avg);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
