@@ -1,19 +1,27 @@
 extends ../layout
 
-block content 
-    table(class="table table-striped")
+block content
+  .container
+    .d-flex.justify-content-between.align-items-center.mt-4.mb-3
+      h2.mb-0 Gebruikers
+      a.btn.btn-primary(href='/users/create') Nieuwe gebruiker
+    table.table.table-striped
       thead
         tr
-          th.col Firstname
-          th.col lastname
-
+          th Firstname
+          th Lastname
+          th Email
+          th Details
+          th Verwijderen
       tbody
         each user in users
-            tr
-                th #{user.first_name}
-                td #{user.last_name}
-                td #{user.email}
-                td 
-                    a.btn.btn-primary(href=`/users/${user.customer_id}/details`) details
-                
+          tr
+            td #{user.first_name}
+            td #{user.last_name}
+            td #{user.email}
+            td
+              a.btn.btn-sm.btn-primary(href=`/users/${user.customer_id}/details`) Details
+            td
+              button.btn.btn-sm.btn-danger(type='button', onclick=`deleteButtonClicked(${user.customer_id}, this)`) Delete
+
 
