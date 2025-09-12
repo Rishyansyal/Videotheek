@@ -1,4 +1,4 @@
-doctype html
+
 html(lang='nl')
   head
     meta(charset='utf-8')
@@ -27,7 +27,7 @@ html(lang='nl')
             li.nav-item
               a.nav-link(class=currentPath.startsWith('/users')?'active':'', href='/users') Gebruikers
             li.nav-item
-              a.nav-link(class=currentPath.startsWith('/about')?'active':'', href='/about') Over
+              a.nav-link(class=currentPath.startsWith('/avg/privacy-policy')?'active':'', href='/avg/privacy-policy') Privacy
             li.nav-item
               a.nav-link(class=currentPath.startsWith('/contact')?'active':'', href='/contact') Contact
           form.d-flex(role='search', method='get', action='/movies/search')
@@ -48,7 +48,7 @@ html(lang='nl')
     footer.mt-5.bg-light.border-top.py-4
       .container.text-center
         .mb-2
-          a.small.mx-2.text-decoration-none.text-muted(href='/privacy') Privacy
+          a.small.mx-2.text-decoration-none.text-muted(href='/avg/privacy-policy') Privacy
           a.small.mx-2.text-decoration-none.text-muted(href='/terms') Voorwaarden
           a.small.mx-2.text-decoration-none.text-muted(href='/contact') Contact
         small.text-muted &copy; #{new Date().getFullYear()} Videotheek.
