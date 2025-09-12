@@ -47,6 +47,26 @@ const usersDao = {
       }
     );
   },
+  create: (first_name, last_name, email, hash, address, district, city_id, postal_code, phone, store_id, callback) => {
+
+    const addressSql = `
+      INSERT INTO address (address, district, city_id, postal_code, phone,location)
+      VALUES (?, ?, ?, ?, ?,ST_GeomFromText('POINT(0 0)'))
+    `;
+      database.query(addressSql, [address, district, city_id, postal_code, phone], (err, addressResult) => {
+      if (err) return callback(err);
+      const address_id = addressResult.insertId;
+
+      const customerSql = `
+        INSERT INTO customer (store_id, first_name, last_name, email, address_id, password)
+        VALUES (?, ?, ?, ?, ?, ?)
+      `;
+      database.query(customerSql, [store_id, first_name, last_name, email, address_id, hash], (err2, customerResult) => {
+        if (err2) return callback(err2);
+        return callback(undefined, { customer_id: customerResult.insertId, address_id });
+      });
+    });
+  },
 };
 
 module.exports = usersDao;
