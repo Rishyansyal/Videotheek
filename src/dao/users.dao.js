@@ -48,7 +48,7 @@ const usersDao = {
     );
   },
   create: (first_name, last_name, email, hash, address, district, city_id, postal_code, phone, store_id, callback) => {
-
+// location is currently set to a default value, you can modify it as needed
     const addressSql = `
       INSERT INTO address (address, district, city_id, postal_code, phone,location)
       VALUES (?, ?, ?, ?, ?,ST_GeomFromText('POINT(0 0)'))
